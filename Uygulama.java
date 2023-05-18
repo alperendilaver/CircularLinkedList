@@ -20,4 +20,12 @@ public class Uygulama {
 			}
 		}
 		tail.next=head;//liste oluştuktan sonra son elemanı head'e bağlar
-		
+		//listeyi yazdırma
+		Node iter =head;
+		System.out.println("liste:\n"+iter.data);
+		iter=iter.next;
+		while(iter!=head) {
+			System.out.println(iter.data);
+			iter=iter.next;
+		}
+
