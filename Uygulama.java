@@ -28,4 +28,37 @@ public class Uygulama {
 			System.out.println(iter.data);
 			iter=iter.next;
 		}
+		iter=head;
+		temp=head;
+		while(iter.next!=null) {
+			for(int i =0;i<m-1;i++) {//iter'i m-1 kadar haraket ettirir
+				temp=iter;
+				iter=iter.next;
+				
+			}
+			if(iter==tail) {//kuyruğun silinme durumu
+				if(head.next==iter) {//eğer son 2 eleman kaldıysa 
+					iter=head;
+					iter.next=null;
+				}else {
+				temp.next=iter.next;
+				tail = temp;
+				iter=temp.next;
+				}
+				
+			}else {
+				if(iter==head) {//head'in silinme durumu
+					temp.next=iter.next;
+					iter=iter.next;
+					head=iter;
+				}
+				else {
+					temp.next =iter.next;
+					iter = temp.next;
+				}
+			}
+		}
+		System.out.println("son kalan: "+iter.data);
+	}
+}
 
